@@ -6,16 +6,27 @@
 
 using namespace std;
 
+void displayAccount(Account accountToDisplay){
+
+    cout<<"Account Name: "<< accountToDisplay.getName() << endl;
+    cout<<"Account Balance: " << accountToDisplay.getBalance() << endl;
+}
+
 int main(){
 
-    Account myAccount;
+    Account myAccount1{"Prathamesh Sawant",500};
+    Account myAccount2{"Damon Salvatore",1000000};
 
-    cout << "Initial account name is: "<< myAccount.getName() <<endl;
-    string theName;
-    getline(cin,theName);
-    myAccount.setName(theName);
+    displayAccount(myAccount1);
+    displayAccount(myAccount2);
 
-    cout << "Name in object account is: "<< myAccount.getName() << endl;
+    myAccount1.deposit(1000);
+    displayAccount(myAccount1);
+
+    myAccount2.withdraw(5000);
+    displayAccount(myAccount2);
+
+    
 
     
     return 0;
